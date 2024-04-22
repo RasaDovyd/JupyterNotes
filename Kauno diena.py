@@ -30,5 +30,22 @@ print(ResultsSet)
 for elementas in ResultsSet: 
     print('::ELEMENTAS')
     print(elementas)    # Isspausdina sarasa atskirai kiekvienas jo elementas atsklirtas zodziu Elementas
-    print(elementas['href']) # atrenka nuoroda i straipsni, nes prie href puslapio kode yra parasytas straipsnio pavadinimas. 
+    print(elementas['href']) # atrenka nuoroda i straipsni, nes prie href puslapio kode yra parasyta nuoroda i straipsni. 
     print(elementas.text) #isspausdina atskirai straipsnio pavadinima. Pasiekeme elemente esanti teksta, siuo atveju straipsnio pavadinima
+
+
+# PABAIGTI
+# Surinkite visus kauno dienos straipsnių pavadinimus į pandas dataframe.
+# pridėkite naują stulpelį, kuriame būtų žodžių kiekis kiekviename pavadinime
+# pridėkite naują stulpelį, kuriame būtų pavadinime esančių simbolių kiekis
+# eksportuokite tai į CSV failą
+# eksportuotą CSV failą nuskaitykite su pandas
+# Koks vidutinis žodžių kiekis pavadinimuose?
+
+# kas atliko šią užduotį: turit likus į kiekvieną straipsnį konkrečiai. 
+# Surinkite tokią statistiką - kiek žodžių turi straipsniai? 
+# Koks vidutinis žodžių kiekis? 
+# Kiek yra straipsnių, kurių žodžių kiekis yra mažesnis, didesnis už vidurkį? 
+# Kokia žodžių kiekio mediana?
+
+
