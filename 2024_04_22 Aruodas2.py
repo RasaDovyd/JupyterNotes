@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 puslapio_nr = [2,3,4,5,6,7,8,9,10,11]
 opcijos = Options()
-data = []
+data = [] # data turi buti cia, pries for cikla, kitaip surinks visu psl info, bet i faila irasys tik vieno..
 
 for puslapis in puslapio_nr:
     url = f'https://www.aruodas.lt/butai/puslapis/{puslapis}'
@@ -81,10 +81,3 @@ for puslapis in puslapio_nr:
 
 df = pd.DataFrame(data=data)
 df.to_csv('Aruodas 2024_04_22.csv', header=True, index=False, sep=';') # sukeliam sugeneruotus duomenis i sukuriama faila
-
-#surinkite iš puslapių nuo 2 iki 11-to butų skelbimus ir tokią informaciją - kaina, kaina už 1 kv metrą, adresas, plotas, kambarių kiekis. 
-# šiuos duomenis eksportuokite į csv failą, skirtukas turi būti ;.
-#suraskite, kiek iš atrinktų butų buvo pagal kainą pigūs, brangūs, neįperkami. Kriterijus - 1 kv metro kaina iki 1 VDu - pigūs, iki 3 VDU - brangūs, daugiau nei 3 VDU - neįperkami.
-#pavaizduokite su boxplotais kainų už 1 kv pasiskirstymą nuo kambarių skaičiaus.
-#Pavaizduokiet tokią informaciją: atrinktų butų kainų pasiskirstymą tarp miestų.
-#pavaizduokite tokią informaciją - kiek buvo sklebimų per skirtingus miestus jūsų atrankoje?
