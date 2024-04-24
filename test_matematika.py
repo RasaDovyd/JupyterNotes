@@ -1,5 +1,6 @@
 from Pamoka_26_2024_04_24 import sudetis, daugyba, rask_didziausia, pasisveikinimas # galima importuoti kiekviena testa atskirai arba:
 import Pamoka_26_2024_04_24 # importavuys visa faila, nereikia atskirai kiekvienos funkcijos importuoti
+import pytest
 
 def test_sudetis():
     assert sudetis(1,2) == 3
@@ -51,3 +52,24 @@ def test_pirmas_sarase_tuscia():
 def test_pirmas_sarase_neListas():
     neListas = 'labas'
     assert Pamoka_26_2024_04_24.pirmas_sarase(neListas) == 'l'
+
+
+# parametrai pateikiami testui, veliau juos visus pateiks testui
+@pytest.mark.parametrize('sarasas, tiketinas_rezultatas',[
+    ([1,2,3,4], 1), # ([sarasas], tiketinas rezultatas)
+    (['a', 'b', 'c'], 'a'),
+    ([], None),
+    ([[1,2],[3,4],[5,6]], [1,2])
+])
+
+def test_pirmas_sarase(sarasas, tiketinas_rezultatas):
+    assert Pamoka_26_2024_04_24.pirmas_sarase(sarasas) == tiketinas_rezultatas
+
+
+@pytest.mark.parametrize('a,b,c,turis',[
+    (1,1,1,1),
+    (2,2,2,8),
+    (4,4,4,64)
+])
+def test_kubo_turis(a,b,c,turis):
+    assert Pamoka_26_2024_04_24.kubo_turis(a,b,c) == turis

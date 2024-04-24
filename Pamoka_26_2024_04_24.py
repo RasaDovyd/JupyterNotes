@@ -20,3 +20,6 @@ def pasisveikinimas(vardas):
 def pirmas_sarase(sarasas:list):
     return sarasas[0] if sarasas else None # if sarasas- patikrina ar tikrau suvestas sarasas
     
+
+def kubo_turis(a,b,c):
+    return a*b*c

@@ -34,31 +34,31 @@ def teigiami_skaiciai(sarasas:list):
 # Funkcija turi grąžinti rūšiuotą sąrašą pagal pateiktas rūšiavimo funkcijas.
 # parašykite keletą testų šiai funkcijai
 
-def saraso_rikiavimas(f:str,sarasas:list)-> list: # f- funkcija
-    def rikiuoti_mazejanciai(sarasas):
-      return sorted(sarasas,reverse=False)  
+# Ilgesnis variantas:
+# def saraso_rikiavimas(f:str,sarasas:list)-> list: # f- funkcija
+#     def rikiuoti_mazejanciai(sarasas):
+#       return sorted(sarasas,reverse=False)  
 
-    def rikiuoti_didejanciai(sarasas):
-      return sorted(sarasas) 
+#     def rikiuoti_didejanciai(sarasas):
+#       return sorted(sarasas) 
 
-    if f == 'didejant':
-        return rikiuoti_didejanciai(sarasas)
-    else:
-        return rikiuoti_mazejanciai(sarasas)
+#     if f == 'didejanciai':
+#         return rikiuoti_didejanciai(sarasas)
+#     else:
+#         return rikiuoti_mazejanciai(sarasas)
 
-print(saraso_rikiavimas('didejant', [1,5,2]))
+# print(saraso_rikiavimas('didejanciai', [1,5,2]))
 
 
 # funkcija pteikiam kaip argumenta
 
-def apskaiciuoti(funkcija, skaicius1, skaicius2):
-    return funkcija(skaicius1, skaicius2)
+def rikiuoti(rikiavimo_funkcija, sarasas):
+    return rikiavimo_funkcija(sarasas)
 
-def sudetis(num1,num2):
-    return num1+num2
+def rikiuoti_mazejanciai(sarasas):
+    return sorted(sarasas, reverse=True)
 
-def  daugyba(num1,num2):
-    return num1*num2
+def rikiuoti_didejanciai(sarasas):
+    return sorted(sarasas)
 
-print(apskaiciuoti(sudetis(),2,5))
-print(sudetis)
+print(rikiuoti(rikiuoti_mazejanciai, [5,3,4,1,6,9]))
