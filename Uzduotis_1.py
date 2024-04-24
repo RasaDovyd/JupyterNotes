@@ -62,3 +62,52 @@ def rikiuoti_didejanciai(sarasas):
     return sorted(sarasas)
 
 print(rikiuoti(rikiuoti_mazejanciai, [5,3,4,1,6,9]))
+
+
+# 1 Užduotis
+# Sukurkite funkciją, kuri patikrintų ar skaičius dalinasi iš 3
+# Parašykite keletą testų (naudojantis parametrize)
+
+def skaiciaus_dalyba_is3(skaicius):
+    if skaicius % 3 == 0:
+        return 'dalinasi'
+    else:
+        return 'nesidalina'
+
+
+# 2 užduotis 
+# Parašykite funkciją rasti_pasikartojancias_raides, kuri priima sąrašą žodžių ir grąžina sąrašą tų žodžių
+# kurie turi bent vieną pasikartojančią raidę.
+# Parašykite keletą testų (naudojantis parametrize)
+
+def pasikartojancios_raides(zodziai):
+    pasikartojantys_z = []
+    for zodis in zodziai:
+        for raide in zodis:
+            if zodis.count(raide) > 1:
+                pasikartojantys_z.append(zodis)
+                break
+    return pasikartojantys_z
+
+# kitas budas:
+# def pasikartojancios_raides(zodziai):
+    # pasikartojantys_z = []
+    # for zodis in zodziai:
+    #     if len(set(zodis)) < len(zodis):
+    #         pasikartojantys_z.append(zodis)
+    # return pasikartojantys_z
+
+
+# 3 užduotis 
+# Parašykite funkciją, kuri priima skaičių ir patikrina, ar jis yra pirminis. 
+# Grąžinkite True, jei skaičius yra pirminis, ir False, jei ne.
+# Parašykite keletą testų (naudojantis parametrize)
+
+def pirminis_skaicius(skaicius:int):
+    if skaicius <= 2:
+        return 'False'
+    for sk in range(2,skaicius):
+        if skaicius % sk == 0:
+            return 'False'
+        else:
+            return 'True'
